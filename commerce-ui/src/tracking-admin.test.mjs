@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { JSDOM } from 'jsdom';
+import { readFileSync } from 'node:fs';
+const source=readFileSync(new URL('../../balika/assets/js/tracking-admin.js',import.meta.url),'utf8');
+function setup(){const dom=new JSDOM('<form id="bon-tracking-form"><table><tr><td><input value="old"></td></tr></table><p id="bon-tracking-dirty"></p></form>',{runScripts:'outside-only'});dom.window.eval(source);return dom;}
+test('tracking warns for unsaved changes, not unchanged or reverted input',()=>{const d=setup(),w=d.window,input=w.document.querySelector('input');let e=new w.Event('beforeunload',{cancelable:true});w.dispatchEvent(e);assert.equal(e.defaultPrevented,false);input.value='new';input.dispatchEvent(new w.Event('input',{bubbles:true}));e=new w.Event('beforeunload',{cancelable:true});w.dispatchEvent(e);assert.equal(e.defaultPrevented,true);assert.match(w.document.querySelector('p').textContent,/1/);input.value='old';e=new w.Event('beforeunload',{cancelable:true});w.dispatchEvent(e);assert.equal(e.defaultPrevented,false);d.window.close();});
+test('tracking permits own submit and restores warning after pageshow',()=>{const d=setup(),w=d.window;w.document.querySelector('input').value='new';w.document.querySelector('form').dispatchEvent(new w.Event('submit'));let e=new w.Event('beforeunload',{cancelable:true});w.dispatchEvent(e);assert.equal(e.defaultPrevented,false);w.dispatchEvent(new w.Event('pageshow'));e=new w.Event('beforeunload',{cancelable:true});w.dispatchEvent(e);assert.equal(e.defaultPrevented,true);d.window.close();});
