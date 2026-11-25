@@ -1,0 +1,5 @@
+OBSERVED: RC04: regex-shaped invalid stored calendar date throws from init scheduling
+OBSERVED: RC04b: same invalid-date failure exists for weekly scheduling
+OBSERVED: RC05: failed user-meta write leaves orphan pairing token and normal link-created notice
+OBSERVED: RC06: reassignment of customer/email does not revoke previous chat grant for same order
+4 audit observations reproduced (not fixes)

@@ -1,0 +1,6 @@
+/commerce-ui/node_modules/
+/commerce-ui/.cache/
+/balika-*.zip
+!/balika-2.5.0-rc.2.zip
+
+/.cache/

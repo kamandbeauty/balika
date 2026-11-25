@@ -1,0 +1,17 @@
+{
+  "name": "balika-storefront",
+  "version": "2.4.0",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/main.jsx --bundle --minify --format=iife --target=es2020 --define:process.env.NODE_ENV=\"\\\"production\\\"\" --legal-comments=linked --outfile=../balika/assets/commerce/storefront.js",
+    "test": "node --test src/*.test.mjs"
+  },
+  "dependencies": {
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "jsdom": "^26.1.0"
+  }
+}

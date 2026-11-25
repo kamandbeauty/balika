@@ -1,0 +1,16 @@
+{
+  "release": "2.5.0-rc.1",
+  "scope": "Audit only; runtime source unchanged",
+  "php_checks": 389,
+  "javascript_tests": 9,
+  "php_fault_observations": 9,
+  "javascript_known_defects_reproduced": 2,
+  "php_grammar_files": 44,
+  "direct_this_method_references": 70,
+  "package_files": 33,
+  "package_bytes": 186910,
+  "package_sha256": "7ee25cefdfa09c8342c08db9a488d2cac5bfa04b51dfa8d5fbdfaf90d076cfd9",
+  "live_wordpress_tested": false,
+  "live_bale_tested": false,
+  "line_coverage_measured": false
+}

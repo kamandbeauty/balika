@@ -1,0 +1,404 @@
+PASS: normalize 09121234567
+PASS: normalize +989121234567
+PASS: normalize 00989121234567
+PASS: normalize 9121234567
+PASS: normalize ۰۹۱۲۱۲۳۴۵۶۷
+PASS: normalize ٠٩١٢١٢٣٤٥٦٧
+PASS: reject malformed phone 123
+PASS: reject malformed phone
+PASS: reject malformed phone +46123456789
+PASS: reject malformed phone 091212345678
+PASS: next daily report is in the future
+PASS: report uses site timezone and validates clock
+PASS: weekly report on Saturday
+PASS: week follows WordPress setting
+PASS: connection token fits messenger payload
+PASS: connection token maps to correct order
+PASS: connection tokens are unique
+PASS: legacy predictable link cannot access orders
+PASS: expired or invalid token cannot access orders
+PASS: group membership alone cannot change orders
+PASS: valid token resolves an order
+PASS: consumed token cannot be reused
+22 checks passed
+PASS: enqueue reports database success
+PASS: enqueue reports database failure
+PASS: empty queue releases lock
+PASS: concurrent worker cannot process locked queue
+PASS: successful send marked sent
+PASS: temporary failure schedules retry
+PASS: fifth failure stops retrying
+PASS: manual retry resets failed messages
+PASS: long Persian messages split without losing Unicode content
+PASS: successful first chunk records progress instead of marking whole message sent
+PASS: message marked sent only after final chunk
+PASS: worker pauses channel outbox if destination or module was disabled after enqueue
+PASS: worker permits revalidated active channel publication
+13 checks passed
+PASS: legacy enabled Telegram option cannot enable sending
+PASS: old platform cannot send or be routed to Bale
+PASS: old platform cannot call external API
+PASS: old platform cannot register webhook
+PASS: queue rejects unsupported platform
+PASS: account store rejects unsupported connection
+PASS: only Bale API endpoint remains
+PASS: master switch blocks direct send before network request
+8 checks passed
+PASS: unauthorised user cannot update tracking
+PASS: empty code cannot change status or data
+PASS: invalid tracking characters rejected
+PASS: unknown destination rejected
+PASS: stale browser snapshot rejected
+PASS: order no longer in source statuses is skipped
+PASS: concurrent edit cannot proceed
+PASS: valid tracking creates queue entry
+PASS: leading zeros preserved and Persian digits converted
+PASS: tracking transitions order to selected destination
+PASS: queue records order association
+PASS: repeated submission does not enqueue duplicate
+PASS: existing code requires explicit replacement consent
+PASS: explicit replacement accepted
+PASS: unlinked customer does not falsely report sending; tracking still saved
+PASS: unchanged tracking can notify after customer connects
+PASS: database failure surfaced independently from saved tracking
+PASS: failed insertion can be retried without changing code
+PASS: disabled Bale reports no delivery
+PASS: optional destination preserves status
+PASS: unsafe tracking URL makes no changes
+PASS: tracking lock released after operations
+PASS: bulk controller rejects invalid nonce
+PASS: changed settings invalidate open bulk form
+PASS: bulk saves entered code without selection and ignores blank row
+PASS: entered row saves without selection checkbox
+PASS: untouched prefilled code does not save or change order status
+PASS: changed existing code still requires replacement confirmation
+PASS: confirmed replacement saves without row selection
+PASS: old form without input snapshot cannot accidentally change prefilled orders
+PASS: oversized bulk request rejected
+PASS: bulk screen renders independent tracking inputs for orders
+PASS: bulk screen includes nonce and concurrency snapshots
+PASS: bulk settings, filters and update forms are separate and balanced
+PASS: bulk form has dirty detection and no selection checkboxes
+PASS: numeric Persian order search and pagination
+PASS: missing tracking includes absent and empty metadata
+PASS: legacy storage filter preserves existing meta queries
+PASS: phone and existing tracking filters
+PASS: malformed filter input rejected
+PASS: invalid order ID cannot broaden results
+PASS: filter and unsaved warning UI rendered
+PASS: unchanged order restores failed input and inline error
+PASS: stale draft never replaces fresh order snapshot
+PASS: processing shortcut overrides display sources and combines with tracking filter
+PASS: unrecognized status filter rejected
+PASS: processing shortcut visible
+PASS: processing shortcut rows can save without changing configured source statuses
+48 checks passed
+PASS: currency follows actual shop currency, not cosmetic label
+PASS: order currency overrides shop currency without fake conversion
+PASS: normal form fields remain enabled before opt-in restrictions
+PASS: password field never exported
+PASS: allowlisted field accepted
+PASS: unlisted field rejected
+PASS: unlisted form rejected
+PASS: numeric field IDs supported
+PASS: sensitive field type blocked even if ID allowlisted
+PASS: Elementor named form supported
+PASS: invalid calendar date rejected
+PASS: reversed range rejected
+PASS: unbounded expensive report rejected
+PASS: same-day report includes end of day
+PASS: range uses local midnight
+PASS: CSV formula injection escaped
+PASS: CSV leading-whitespace formula escaped
+PASS: payment reminder includes order payment link
+PASS: legacy custom template also gets payment link
+PASS: paid order does not expose active payment prompt
+PASS: template preview substitutes data without saving template
+PASS: preview never persists configuration
+PASS: settings export excludes connection credentials and IDs
+PASS: malformed JSON import rejected
+PASS: import refuses connection credentials
+PASS: import enforces actual boolean types
+PASS: valid portable settings accepted
+27 checks passed
+PASS: UTF-8 BOM and leading zeros preserved
+PASS: semicolon delimiter supported
+PASS: tab delimiter supported
+PASS: quoted comma preserved
+PASS: uneven columns reject entire file
+PASS: empty file rejected
+PASS: UTF-16 and binary content rejected
+PASS: invalid UTF-8 rejected
+PASS: oversized file rejected
+PASS: 201-row file rejected rather than truncated
+PASS: 200 rows accepted
+PASS: oversized cell rejected
+PASS: explicit internal ID matches
+PASS: Excel scientific order identifier rejected
+PASS: internal ID is not mistaken for custom display number
+PASS: unknown custom numbering is not guessed
+PASS: exact custom-number adapter match accepted
+PASS: ambiguous custom number rejected
+PASS: preview snapshots valid orders without saving
+PASS: same column cannot map to two fields
+PASS: out-of-range column rejected
+PASS: both duplicate order rows blocked
+PASS: both duplicate tracking code rows blocked
+PASS: all repeated occurrences blocked
+PASS: inaccessible order details not exposed
+PASS: cancelled order outside source statuses blocked
+26 checks passed
+PASS: import endpoint rejects unauthorised user
+PASS: import endpoint rejects invalid nonce
+PASS: another user cannot apply a stolen batch token
+PASS: expired batch does not modify orders
+PASS: explicit final confirmation required
+PASS: more than 20 selected rows rejected
+PASS: simultaneous apply blocked by batch lock
+PASS: changed source or target invalidates preview and releases lock
+PASS: forged selection cannot apply an invalid preview row
+PASS: stored snapshot and explicit replacement passed to shared service
+PASS: row result checkpointed before redirect
+PASS: replayed POST cannot apply a completed row twice
+PASS: failed row requires a new preview rather than blind retries
+13 checks passed
+PASS: storefront disabled by default and catalog refuses access
+PASS: published visible unprotected product is public
+PASS: direct cart is explicit opt-in
+PASS: simple product allowed after opt-in
+PASS: private products never exposed
+PASS: password-protected product excluded
+PASS: hidden products excluded
+PASS: variation selection delegates to native product page
+PASS: out-of-stock product cannot be added
+PASS: extension filter can disable direct cart for custom product requirements
+PASS: cross-origin requests rejected
+PASS: origin checks include scheme and port
+PASS: opaque origin rejected
+PASS: cart secret must match the current Woo session
+PASS: empty or malformed session tokens rejected
+PASS: invalid quantity rejected: -1
+PASS: invalid quantity rejected: 100
+PASS: invalid quantity rejected: "1.5"
+PASS: invalid quantity rejected: "2e3"
+PASS: invalid quantity rejected: []
+PASS: bootstrap issues session-scoped token and persists native Woo cookie
+PASS: GET cannot mutate cart
+PASS: missing or wrong cart token cannot mutate cart
+PASS: cart ignores client price and uses Woo product prices
+PASS: WooCommerce add-to-cart validation respected
+PASS: quantity above stock rejected without altering item
+PASS: cannot mutate cart keys outside current session
+PASS: coupons use native cart method
+PASS: native cart removal works
+PASS: bot catalog is restricted to private chat
+PASS: bot shop command handled
+PASS: bot links to web storefront, not a fake native payment
+PASS: channel destinations strictly validated
+PASS: invalid publication date rejected
+PASS: publication time uses site timezone
+PASS: disabled channel module never queues publications
+PASS: publication lock blocks concurrent workers
+PASS: due content enters existing Bale outbox
+PASS: queued job is not queued twice
+PASS: crash recovery detects existing outbox before marking job queued
+PASS: active published content is deliverable
+PASS: disabled destination prevents delivery even after enqueue
+PASS: destination changes never silently reroute queued content
+PASS: unpublished content is blocked at delivery time
+PASS: cancelled publication cannot be delivered
+PASS: publication locks released
+PASS: channel administrator endpoint rejects unauthorised users
+PASS: channel administrator endpoint rejects invalid nonce
+PASS: cannot schedule a source the manager cannot edit
+PASS: cannot schedule unpublished source
+PASS: authorised schedule stores source, destination and timestamp
+PASS: single-use schedule form prevents repeated POST publication
+PASS: bot module respects global Bale disable switch
+PASS: queued channel messages respect global Bale disable switch
+54 checks passed
+PASS: support opt-in defaults off
+PASS: messages are not public or exposed through default REST
+PASS: disabled module creates no conversation
+PASS: group identity rejected
+PASS: actor mismatch rejected
+PASS: malformed identity rejected
+PASS: oversized or malformed text rejected
+PASS: no relay before explicit support start
+PASS: thread identity bound to private chat, not phone
+PASS: repeated start reuses open thread
+PASS: incoming text stored with quotes preserved
+PASS: duplicate Bale message_id does not duplicate message
+PASS: numeric text stays in human conversation
+PASS: order command remains available outside relay
+PASS: unsupported attachment is not stored as a fake message
+PASS: per-chat rate bound enforced
+PASS: unauthorized admin mutation rejected
+PASS: missing or invalid nonce rejected
+PASS: operator reply queued only to thread chat
+PASS: reply preserves text and operator author
+PASS: single-use reply form blocks POST replay
+PASS: reply token cannot be moved to another thread
+PASS: worker pauses support reply when Bale is disabled
+PASS: support module switch checked at delivery
+PASS: disabled active support does not silently store more messages
+PASS: explicit retry reactivates paused reply
+PASS: queue processes permitted support reply
+PASS: successful reply is not resent by retry
+PASS: queue failure retains reply for explicit recovery
+PASS: failed enqueue recovered without creating another message
+PASS: close refuses to claim success while worker is busy
+PASS: close succeeds with locks
+PASS: close cancels only unsent replies
+PASS: closed conversation cannot deliver
+PASS: closed thread rejects new operator reply
+PASS: new support request after close gets new thread
+PASS: old inbound message replay is deduplicated across threads
+PASS: stop closes support then permits existing unlink handler
+PASS: all support and queue locks released
+PASS: closed thread and its messages expire after retention
+PASS: direct CPT access requires operator permission, not generic editor role
+PASS: partial metadata write is rejected and incomplete post removed
+PASS: failed post creation does not claim an open conversation
+PASS: actual webhook routes active support BEFORE phone/order lookup
+PASS: group support command never creates private conversation
+PASS: inbox reply form has handler, nonce and one-use token
+PASS: inbox renders customer text and close operation
+PASS: unauthorized inbox rendering denied
+PASS: module switch refuses change while worker is busy
+PASS: module switch saves off and releases worker lock
+PASS: private admin destinations validated, deduplicated and group/channel IDs excluded
+PASS: inbound support text automatically queued to private administrators
+PASS: administrator receives actual text and thread identifier
+PASS: admin notification links to correct protected inbox thread
+PASS: repeated inbound update cannot duplicate administrator notification
+PASS: delivery rejects mismatched payload recipient
+PASS: worker rechecks current recipients and pauses removed admin
+PASS: notification enqueue failure preserves inbox text and records actionable notice
+PASS: operator can recover failed administrator notification
+PASS: repeated administrator notification retry does not create duplicates
+PASS: closing conversation cancels unsent admin copies and blocks further delivery
+PASS: sender is excluded from their own administrator notification
+PASS: notification and conversation locks released
+PASS: admin username normalizes to canonical Bale URL
+PASS: full Bale link normalized
+PASS: unsafe or malformed support destination rejected
+PASS: unsafe or malformed support destination rejected
+PASS: unsafe or malformed support destination rejected
+PASS: unsafe or malformed support destination rejected
+PASS: unsafe or malformed support destination rejected
+PASS: unsafe or malformed support destination rejected
+PASS: invalid destination does not overwrite configuration
+PASS: enabled direct mode requires configured account
+PASS: panel saves direct contact atomically
+PASS: direct support creates no ticket, stored text or forwarding queue
+PASS: support command returns direct chat button to saved account
+PASS: direct mode disables old inbox delivery paths
+PASS: old pending support copies pause after switching to direct mode
+PASS: global Bale switch respected for direct contact
+PASS: saved direct account and editable field visible in admin panel
+PASS: unconfigured installations default to direct-contact mode
+81 checks passed
+PASS: settings unslash exactly once
+PASS: verified write reports success
+PASS: unchanged settings reported correctly
+PASS: failed write never reports success
+PASS: array input rejected safely
+PASS: duplicate links enqueue once per destination
+PASS: counts successful enqueues
+PASS: same form cannot be replayed
+PASS: partial enqueue failure counted accurately
+PASS: total enqueue failure is not success
+PASS: concurrent operation fails closed on lock contention
+PASS: failed token consumption prevents sending
+PASS: unknown token rejected
+PASS: empty message rejected
+PASS: nonce and capability checks retained
+15 checks passed
+PASS: no recorded test never implies healthy connection
+PASS: matching credential test recognized
+PASS: changing credential invalidates prior connection result
+PASS: failed connection test shown truthfully
+PASS: missing cron produces actionable warning
+PASS: daily shortcut uses processing and missing-code filters
+PASS: dashboard does not expose bot credential
+PASS: direct support destination and limitation displayed
+PASS: recent heartbeat not confused with completed processing
+9 checks passed
+PASS: pairing issues short lived random-token request
+PASS: Bale claim alone grants no authority
+PASS: approval must match displayed candidate
+PASS: approved account becomes authorized recipient
+PASS: approved request consumed
+PASS: revoked WordPress permission rejects claim
+PASS: group cannot claim admin identity
+PASS: full day covers final second in site timezone
+PASS: DST day covers 25 hours instead of fixed seconds
+PASS: old recurring schedule retired
+PASS: incomplete outbox does not advance daily cursor
+PASS: incomplete outbox schedules recovery rather than spinning immediately
+PASS: late cron reports anchored day not execution day
+PASS: daily cursor advances one day for delayed catch-up
+PASS: cursor write failure retains prepared report for recovery
+PASS: disabled automatic daily report does not dispatch
+PASS: authorized private callback enables report
+PASS: replayed enable callback does not toggle back
+PASS: unauthorized sender cannot change reports
+PASS: group callback cannot change reports
+PASS: failed option write leaves report enabled
+PASS: disabled Bale blocks order-changing callback before order lookup
+PASS: weekly cron prepares outbox instead of direct broadcast
+PASS: delayed weekly report retains complete seven-day window
+PASS: weekly cursor advances seven calendar days
+25 checks passed
+PASS: snapshot save failure queues nothing
+PASS: partial enqueue retains snapshot and first recipient
+PASS: recovery only inserts missing unique recipient
+PASS: recovery uses frozen report instead of recalculating sales
+PASS: repeated producer cannot duplicate queued report
+PASS: recipient delivery states tracked separately
+PASS: retry failures do not resend successful recipient
+PASS: manual retry refuses sent message
+PASS: manual retry resets only failed destination
+PASS: failed recipient can recover
+PASS: removed destination rejected at delivery
+PASS: disabled daily reports pause queue delivery
+PASS: manual retry cannot bypass disabled report
+PASS: re-enabled report can explicitly resume
+PASS: payload must match durable snapshot
+PASS: queue lock contention fails closed
+PASS: queue retention excludes daily report history
+PASS: failed existence query cannot enqueue duplicates
+PASS: no destinations leaves day recoverable instead of creating empty completed snapshot
+PASS: weekly report uses durable per-destination outbox
+PASS: weekly identity fits queue field and respects weekly permission
+PASS: disabled weekly report pauses delivery
+PASS: stock attachment shares history and retry guard
+PASS: disabled stock attachment cannot deliver
+24 checks passed
+PASS: API URL token masked without word boundary
+PASS: configured secrets and URL-encoded variants removed
+PASS: old log output redacted on read
+PASS: current mapping and unpaid order permit reminder
+PASS: paid order blocks stale payment reminder
+PASS: removed mapping blocks queued customer payload
+PASS: reassigned mapping blocks old chat
+PASS: customer notification switch respected
+PASS: busy worker prevents false successful unlink
+PASS: failed delete releases worker lock
+PASS: successful unlink removes customer mapping
+PASS: unlink cancels customer message without deleting manager daily history
+PASS: worker rechecks mapping before API call
+PASS: master switch leaves pending queue unsent
+14 checks passed
+PASS: valid order token can bind one order
+PASS: explicit order grant works
+PASS: same phone on another order grants no access
+PASS: orders command lists only explicit grants
+PASS: legacy phone mapping cannot authorize sends
+PASS: legacy audience not automatically migrated to marketing consent
+PASS: group cannot receive private order grant
+PASS: relink respects queue lock
+PASS: failed write never claims binding success
+PASS: new secure link revokes previous chat for only that order
+10 checks passed

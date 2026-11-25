@@ -1,0 +1,4 @@
+OBSERVED: RC01: transport-failed typed manager message loses type on fallback enqueue
+OBSERVED: RC02: checkout-path enqueue loses explicit type and is quarantined by current worker
+OBSERVED: RC03: transient failure of untyped bot reply produces a row current worker will pause
+3 audit observations reproduced (not fixes)

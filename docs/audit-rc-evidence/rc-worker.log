@@ -1,0 +1,28 @@
+PASS: snapshot save failure queues nothing
+PASS: partial enqueue retains snapshot and first recipient
+PASS: recovery only inserts missing unique recipient
+PASS: recovery uses frozen report instead of recalculating sales
+PASS: repeated producer cannot duplicate queued report
+PASS: recipient delivery states tracked separately
+PASS: retry failures do not resend successful recipient
+PASS: manual retry refuses sent message
+PASS: manual retry resets only failed destination
+PASS: failed recipient can recover
+PASS: removed destination rejected at delivery
+PASS: disabled daily reports pause queue delivery
+PASS: manual retry cannot bypass disabled report
+PASS: re-enabled report can explicitly resume
+PASS: payload must match durable snapshot
+PASS: queue lock contention fails closed
+PASS: queue retention excludes daily report history
+PASS: failed existence query cannot enqueue duplicates
+PASS: no destinations leaves day recoverable instead of creating empty completed snapshot
+PASS: weekly report uses durable per-destination outbox
+PASS: weekly identity fits queue field and respects weekly permission
+PASS: disabled weekly report pauses delivery
+PASS: stock attachment shares history and retry guard
+PASS: disabled stock attachment cannot deliver
+24 checks passed
+OBSERVED: RC07: queued admin_order still sends to recipient removed from current manager destinations
+OBSERVED: RC08: API accepted but failed sent-checkpoint causes repeat on next worker run
+2 worker audit observations reproduced (not fixes)

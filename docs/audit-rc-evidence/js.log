@@ -1,0 +1,68 @@
+
+> balika-storefront@2.4.0 test
+> node --test src/*.test.mjs
+
+TAP version 13
+# Subtest: catalog query preserves plain-permalink REST route and encodes search safely
+ok 1 - catalog query preserves plain-permalink REST route and encodes search safely
+  ---
+  duration_ms: 1.86386
+  type: 'test'
+  ...
+# Subtest: cart endpoint preserves native wc-ajax routing
+ok 2 - cart endpoint preserves native wc-ajax routing
+  ---
+  duration_ms: 0.20952
+  type: 'test'
+  ...
+# Subtest: quantity boundaries reject signs, decimals, arrays and overlarge quantities
+ok 3 - quantity boundaries reject signs, decimals, arrays and overlarge quantities
+  ---
+  duration_ms: 0.263566
+  type: 'test'
+  ...
+# Subtest: server cart failures and invalid HTML responses are errors, not successful updates
+ok 4 - server cart failures and invalid HTML responses are errors, not successful updates
+  ---
+  duration_ms: 2.576548
+  type: 'test'
+  ...
+# Subtest: real React bundle: catalog, safe text rendering, cart POST token and Woo checkout
+ok 5 - real React bundle: catalog, safe text rendering, cart POST token and Woo checkout
+  ---
+  duration_ms: 342.718561
+  type: 'test'
+  ...
+# Subtest: products needing native configuration link to canonical product instead of unsafe direct add
+ok 6 - products needing native configuration link to canonical product instead of unsafe direct add
+  ---
+  duration_ms: 129.027206
+  type: 'test'
+  ...
+# Subtest: catalog error is shown with retry rather than fake products
+ok 7 - catalog error is shown with retry rather than fake products
+  ---
+  duration_ms: 46.614031
+  type: 'test'
+  ...
+# Subtest: tracking warns for unsaved changes, not unchanged or reverted input
+ok 8 - tracking warns for unsaved changes, not unchanged or reverted input
+  ---
+  duration_ms: 73.491499
+  type: 'test'
+  ...
+# Subtest: tracking permits own submit and restores warning after pageshow
+ok 9 - tracking permits own submit and restores warning after pageshow
+  ---
+  duration_ms: 15.503143
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1818.696865
